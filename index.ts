@@ -9,3 +9,29 @@ import { UserData } from './user-data'
 
 let user:UserData;
 
+function isNumber<T>(obj:T):boolean{
+  if(typeof(obj) == "number"){
+    return true
+  }
+  else{
+    return false;
+  }
+}
+
+function getData<T>(obj:T){
+  if(isNumber(obj)){
+    console.log("El numero de telefono del ususario es "+obj);
+  }
+  else{
+    console.log("El nombre del usuario es "+obj);
+  }
+};
+
+user = {
+  name:"Alberto",
+  age:23,
+  phone:111223344
+};
+
+getData(user.name);
+getData(user.phone);
